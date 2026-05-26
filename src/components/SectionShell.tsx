@@ -16,26 +16,65 @@ export function SectionShell({
   className = "",
 }: SectionShellProps) {
   return (
-    <section className={`py-16 sm:py-20 ${className}`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+    <section className={`section ${className}`}>
+      <div className="section-inner">
+        <div style={{ maxWidth: 800 }}>
           {eyebrow ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
+            <p
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 11,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "var(--ink-black)",
+                margin: 0,
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
+              <span
+                style={{
+                  width: 7,
+                  height: 7,
+                  borderRadius: "50%",
+                  background: "var(--signal-orange)",
+                  display: "inline-block",
+                }}
+              />
               {eyebrow}
             </p>
           ) : null}
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 700,
+              fontSize: 42,
+              lineHeight: 1.08,
+              letterSpacing: "-0.02em",
+              color: "var(--ink-black)",
+              margin: eyebrow ? "16px 0 0" : 0,
+            }}
+          >
             {title}
           </h2>
           {description ? (
-            <p className="mt-4 text-base leading-7 text-slate-300 sm:text-lg">
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 16,
+                lineHeight: 1.6,
+                color: "var(--ink-secondary)",
+                margin: "16px 0 0",
+                maxWidth: 680,
+              }}
+            >
               {description}
             </p>
           ) : null}
         </div>
-        <div className="mt-10">{children}</div>
+        <div style={{ marginTop: 48 }}>{children}</div>
       </div>
     </section>
   );
 }
-

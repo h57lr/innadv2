@@ -15,22 +15,44 @@ export function MobileNav() {
   }, [pathname]);
 
   return (
-    <div className="md:hidden">
+    <div>
       <button
         type="button"
         onClick={() => setIsOpen((current) => !current)}
-        className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white"
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          border: "1px solid var(--grid-grey)",
+          borderRadius: 9999,
+          background: "transparent",
+          padding: "8px 16px",
+          fontFamily: "var(--font-sans)",
+          fontSize: 13,
+          fontWeight: 500,
+          color: "var(--ink-black)",
+          cursor: "pointer",
+        }}
         aria-expanded={isOpen}
-        aria-controls="mobile-nav-panel"
       >
-        Menu
+        {isOpen ? "Close" : "Menu"}
       </button>
       {isOpen ? (
         <div
-          id="mobile-nav-panel"
-          className="absolute inset-x-4 top-full mt-4 rounded-3xl border border-white/10 bg-slate-950/95 p-4 shadow-2xl backdrop-blur"
+          style={{
+            position: "absolute",
+            left: 16,
+            right: 16,
+            top: "100%",
+            marginTop: 8,
+            borderRadius: 16,
+            border: "1px solid var(--grid-grey)",
+            background: "rgba(250,250,250,0.98)",
+            padding: 12,
+            boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
+          }}
         >
-          <nav className="flex flex-col gap-2">
+          <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
             {navigation.map((item) => {
               const isActive =
                 item.href === "/"
@@ -41,17 +63,31 @@ export function MobileNav() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-2xl px-4 py-3 text-sm font-medium transition ${
-                    isActive
-                      ? "bg-sky-400 text-slate-950"
-                      : "text-slate-200 hover:bg-white/5"
-                  }`}
+                  style={{
+                    borderRadius: 12,
+                    padding: "10px 14px",
+                    fontFamily: "var(--font-sans)",
+                    fontSize: 14,
+                    fontWeight: isActive ? 600 : 400,
+                    color: isActive ? "var(--ink-black)" : "var(--ink-secondary)",
+                    background: isActive ? "rgba(0,0,0,0.04)" : "transparent",
+                    textDecoration: "none",
+                    transition: "background 160ms ease",
+                  }}
                 >
                   {item.label}
                 </Link>
               );
             })}
           </nav>
+          <div style={{ height: 1, background: "var(--grid-grey)", margin: "12px 0" }} />
+          <Link
+            href="/contact"
+            className="btn-edit btn-edit--primary"
+            style={{ width: "100%", textAlign: "center" }}
+          >
+            Start an inquiry
+          </Link>
         </div>
       ) : null}
     </div>

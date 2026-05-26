@@ -16,14 +16,25 @@ export function HeaderNavLink({ href, children }: HeaderNavLinkProps) {
   return (
     <Link
       href={href}
-      className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-        isActive
-          ? "bg-white/10 text-white"
-          : "text-slate-300 hover:bg-white/5 hover:text-white"
-      }`}
+      style={{
+        color: isActive ? "var(--ink-black)" : "var(--ink-secondary)",
+        textDecoration: "none",
+        fontFamily: "var(--font-sans)",
+        fontSize: 14,
+        fontWeight: isActive ? 500 : 400,
+        padding: "6px 14px",
+        borderRadius: 9999,
+        transition: "color 160ms ease, background 160ms ease",
+        background: isActive ? "rgba(0,0,0,0.04)" : "transparent",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.background = "rgba(0,0,0,0.04)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.background = isActive ? "rgba(0,0,0,0.04)" : "transparent";
+      }}
     >
       {children}
     </Link>
   );
 }
-

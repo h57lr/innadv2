@@ -18,23 +18,44 @@ export function CTA({
   secondaryHref,
 }: CTAProps) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-[0_24px_80px_-32px_rgba(15,23,42,0.8)]">
-      <h3 className="text-2xl font-semibold text-white">{title}</h3>
-      <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
+    <div
+      style={{
+        borderTop: "1px solid var(--ink-black)",
+        paddingTop: 48,
+        marginTop: 48,
+      }}
+    >
+      <h3
+        style={{
+          fontFamily: "var(--font-serif)",
+          fontWeight: 700,
+          fontSize: 32,
+          lineHeight: 1.1,
+          letterSpacing: "-0.02em",
+          color: "var(--ink-black)",
+          margin: 0,
+        }}
+      >
+        {title}
+      </h3>
+      <p
+        style={{
+          marginTop: 16,
+          fontFamily: "var(--font-sans)",
+          fontSize: 15,
+          lineHeight: 1.6,
+          color: "var(--ink-secondary)",
+          maxWidth: 600,
+        }}
+      >
         {description}
       </p>
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-        <Link
-          href={primaryHref}
-          className="inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300"
-        >
+      <div style={{ marginTop: 24, display: "flex", gap: 12, flexWrap: "wrap" }}>
+        <Link href={primaryHref} className="btn-edit btn-edit--primary">
           {primaryLabel}
         </Link>
         {secondaryLabel && secondaryHref ? (
-          <Link
-            href={secondaryHref}
-            className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5"
-          >
+          <Link href={secondaryHref} className="btn-edit btn-edit--outline">
             {secondaryLabel}
           </Link>
         ) : null}
@@ -42,4 +63,3 @@ export function CTA({
     </div>
   );
 }
-

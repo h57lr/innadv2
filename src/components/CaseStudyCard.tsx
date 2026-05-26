@@ -7,22 +7,111 @@ type CaseStudyCardProps = {
 };
 
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
+  const borderStyle = "1px solid var(--grid-grey)";
+
   return (
-    <article className="flex h-full flex-col rounded-3xl border border-white/10 bg-slate-950/65 p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
-        {caseStudy.category}
-      </p>
-      <h3 className="mt-3 text-xl font-semibold text-white">{caseStudy.title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-6 text-slate-300">
+    <article
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        borderRadius: 24,
+        border: borderStyle,
+        padding: 24,
+      }}
+    >
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+        <span
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 9.5,
+            letterSpacing: "0.10em",
+            textTransform: "uppercase",
+            padding: "3px 8px",
+            borderRadius: 9999,
+            border: borderStyle,
+            color: "var(--signal-orange)",
+          }}
+        >
+          {caseStudy.category}
+        </span>
+        <span
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 9.5,
+            letterSpacing: "0.10em",
+            textTransform: "uppercase",
+            padding: "3px 8px",
+            borderRadius: 9999,
+            border: borderStyle,
+            color: "var(--ink-secondary)",
+          }}
+        >
+          {caseStudy.clientLabel}
+        </span>
+      </div>
+      <h3
+        style={{
+          fontFamily: "var(--font-serif)",
+          fontWeight: 700,
+          fontSize: 20,
+          lineHeight: 1.15,
+          letterSpacing: "-0.01em",
+          color: "var(--ink-black)",
+          margin: "14px 0 0",
+        }}
+      >
+        {caseStudy.title}
+      </h3>
+      <p
+        style={{
+          marginTop: 10,
+          fontFamily: "var(--font-sans)",
+          fontSize: 13,
+          lineHeight: 1.6,
+          color: "var(--ink-secondary)",
+          flex: 1,
+        }}
+      >
         {caseStudy.summary}
       </p>
+      <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 8 }}>
+        <div>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 9.5, letterSpacing: "0.10em", textTransform: "uppercase", color: "#999", margin: 0 }}>
+            Problem
+          </p>
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.5, color: "var(--ink-secondary)", margin: "4px 0 0" }}>
+            {caseStudy.problem}
+          </p>
+        </div>
+        <div>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 9.5, letterSpacing: "0.10em", textTransform: "uppercase", color: "#999", margin: 0 }}>
+            Outcome
+          </p>
+          <p style={{ fontFamily: "var(--font-sans)", fontSize: 13, lineHeight: 1.5, color: "var(--ink-secondary)", margin: "4px 0 0" }}>
+            {caseStudy.outcomeType}
+          </p>
+        </div>
+      </div>
       <Link
         href={`/case-studies#${caseStudy.slug}`}
-        className="mt-6 inline-flex items-center text-sm font-semibold text-emerald-300 transition hover:text-emerald-200"
+        style={{
+          marginTop: 16,
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 6,
+          fontFamily: "var(--font-sans)",
+          fontSize: 13,
+          fontWeight: 600,
+          color: "var(--ink-black)",
+          textDecoration: "none",
+          opacity: 0.6,
+          transition: "opacity 160ms ease",
+        }}
       >
-        View case-study structure
+        Review structure
+        <span style={{ fontSize: 16 }}>→</span>
       </Link>
     </article>
   );
 }
-

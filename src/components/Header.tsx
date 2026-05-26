@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 import { navigation } from "@/data/navigation";
@@ -7,36 +9,91 @@ import { HeaderNavLink } from "./HeaderNavLink";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex flex-col">
-          <span className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-300">
-            Enad Al-Shneikat
-          </span>
-          <span className="text-xs text-slate-400">
-            Digital Marketing & Martech Portfolio
-          </span>
-        </Link>
-
-        <nav className="hidden items-center gap-1 md:flex">
-          {navigation.map((item) => (
-            <HeaderNavLink key={item.href} href={item.href}>
-              {item.label}
-            </HeaderNavLink>
-          ))}
-        </nav>
-
-        <div className="relative">
-          <MobileNav />
-          <Link
-            href="/contact"
-            className="hidden rounded-full bg-sky-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-sky-300 md:inline-flex"
-          >
-            Contact
+    <header
+      className="sticky top-0 z-50"
+      style={{
+        padding: "16px 64px",
+        background: "rgba(250,250,250,0.55)",
+        backdropFilter: "blur(20px) saturate(160%)",
+        WebkitBackdropFilter: "blur(20px) saturate(160%)",
+        borderBottom: "1px solid rgba(0,0,0,0.06)",
+        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 0 rgba(0,0,0,0.02)",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 1280,
+          width: "100%",
+          margin: "0 auto",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 48 }}>
+          <Link href="/" style={{ textDecoration: "none", display: "flex", flexDirection: "column" }}>
+            <span
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: 18,
+                fontWeight: 700,
+                color: "var(--ink-black)",
+                letterSpacing: "-0.01em",
+                lineHeight: 1.2,
+              }}
+            >
+              Enad Al-Shneikat
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 9.5,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "var(--ink-secondary)",
+                marginTop: 1,
+              }}
+            >
+              Performance Marketing &amp; Martech
+            </span>
           </Link>
+
+          <nav
+            className="hidden md:flex"
+            style={{ display: "none", gap: 4, alignItems: "center" }}
+          >
+            {navigation.map((item) => (
+              <HeaderNavLink key={item.href} href={item.href}>
+                {item.label}
+              </HeaderNavLink>
+            ))}
+          </nav>
+        </div>
+
+        <div
+          className="hidden md:flex"
+          style={{ display: "none", gap: 12, alignItems: "center" }}
+        >
+          <Link href="/contact" className="btn-edit btn-edit--primary">
+          Start an inquiry
+        </Link>
+        </div>
+
+        <div className="md:hidden">
+          <MobileNav />
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 768px) {
+          nav {
+            display: flex !important;
+          }
+          div:has(> .btn-edit--primary) {
+            display: flex !important;
+          }
+        }
+      `}</style>
     </header>
   );
 }
-

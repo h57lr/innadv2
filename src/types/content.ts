@@ -6,35 +6,43 @@ export type NavItem = {
 export type Service = {
   slug: string;
   title: string;
+  category: string;
   summary: string;
   intro: string;
+  focusAreas: string[];
+  idealFor: string[];
   solves: string[];
   capabilities: string[];
+  typicalProblems: string[];
   tools: string[];
   deliverables: string[];
+  ctaDescription: string;
+  relatedSlugs: string[];
 };
 
 export type CaseStudy = {
   slug: string;
   title: string;
   category: string;
+  clientLabel: string;
   summary: string;
-  context: string;
-  challenge: string;
-  solution: string;
-  validation: string;
-  impactNote: string;
+  problem: string;
+  role: string;
+  approach: string[];
+  tools: string[];
+  outcomeType: string;
+  proofPoints: string[];
+  confidentiality: string;
 };
 
 export type ToolCategory =
-  | "Paid Media"
-  | "Tracking & Analytics"
-  | "MMP & App Analytics"
-  | "BI & Reporting"
-  | "Automation & RPA"
-  | "Email & CRM"
-  | "Website & E-commerce"
-  | "Research & Intelligence";
+  | "Paid Media Platforms"
+  | "Tracking & Attribution"
+  | "MMPs"
+  | "Analytics & BI"
+  | "Automation & Data Workflows"
+  | "Ecommerce & CMS"
+  | "AI & Development Tools";
 
 export type Tool = {
   name: string;
@@ -47,15 +55,20 @@ export type InsightArticle = {
   title: string;
   category: string;
   summary: string;
+  status: string;
+  readingTime: string;
+  intent: string;
   sections: {
     heading: string;
     body: string;
+    bullets?: string[];
+    note?: string;
   }[];
 };
 
-export type ContactPlaceholder = {
+export type ContactDetail = {
   label: string;
   value: string;
   href?: string;
+  note?: string;
 };
-
