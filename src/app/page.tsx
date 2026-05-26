@@ -75,6 +75,27 @@ export default function HomePage() {
   return (
     <>
       <section style={{ borderBottom: borderStyle }}>
+        <div className="hero-profile-mobile" style={{ display: "none", maxWidth: 1280, margin: "0 auto", padding: "48px 24px 0", flexDirection: "column", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, alignItems: "start" }}>
+            <ProfileImage src="/assets/images/profile.jpg" alt="Enad Al-Shneikat" />
+            <div style={{ borderRadius: 24, border: borderStyle, padding: "16px", textAlign: "center", alignSelf: "stretch", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 16, color: "var(--ink-black)", margin: 0 }}>
+                Enad Al-Shneikat
+              </p>
+              <p style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.08em", color: "var(--ink-secondary)", margin: "3px 0 0", textTransform: "uppercase" }}>
+                Full-Stack Digital Marketer
+              </p>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: 10, color: "var(--signal-orange)", margin: "2px 0 0" }}>
+                API & Integration Engineer
+              </p>
+              <div style={{ marginTop: 10, display: "flex", justifyContent: "center", gap: 8 }}>
+                <a href="mailto:es@trilogytradingllc.com" style={{ fontFamily: "var(--font-sans)", fontSize: 11, color: "var(--ink-secondary)", textDecoration: "underline", textUnderlineOffset: 2 }}>Email</a>
+                <span style={{ color: "var(--grid-grey)" }}>/</span>
+                <a href="https://www.linkedin.com/in/enad-abbsc/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-sans)", fontSize: 11, color: "var(--ink-secondary)", textDecoration: "underline", textUnderlineOffset: 2 }}>LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div
           style={{
             maxWidth: 1280,
@@ -118,6 +139,7 @@ export default function HomePage() {
               Full-stack digital marketing, automation, and BI expertise for brands scaling with data.
             </h1>
             <p
+              className="hero-description"
               style={{
                 marginTop: 20,
                 fontFamily: "var(--font-sans)",
@@ -213,6 +235,16 @@ export default function HomePage() {
               >
                 Full-Stack Digital Marketer
               </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: 11,
+                  color: "var(--signal-orange)",
+                  margin: "2px 0 0",
+                }}
+              >
+                API & Integration Engineer
+              </p>
               <div style={{ marginTop: 14, display: "flex", justifyContent: "center", gap: 10 }}>
                 <a
                   href="mailto:es@trilogytradingllc.com"
@@ -252,7 +284,7 @@ export default function HomePage() {
         title="RPA, BI, data analytics, and full-stack marketing infrastructure"
         description=""
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+        <div className="skills-cards" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
               borderRadius: 24,
@@ -268,7 +300,6 @@ export default function HomePage() {
               With deep experience in RPA and workflow automation, business intelligence, and data analyst practices, and hands-on expertise with Supermetrics, Looker Studio, Microstrategy, Microsoft Power BI, and advanced Excel, I build a wide range of automations. These range from automated workflows to scalable, visualized, automated reporting systems that eliminate manual work, reduce errors, and surface meaningful insights that support decision making.
             </p>
           </div>
-
           <div
             style={{
               borderRadius: 24,
@@ -284,7 +315,6 @@ export default function HomePage() {
               I work closely with performance and growth teams to design clean measurement systems, troubleshoot tracking issues, validate data accuracy, and support strategic planning and scaling. I focus on executional excellence while enabling teams to take fast, data-driven decisions with confidence.
             </p>
           </div>
-
           <div
             style={{
               borderRadius: 24,
@@ -300,7 +330,6 @@ export default function HomePage() {
               My technical background covers digital marketing infrastructure and market research using NetBase and eMarketer. I work extensively with business intelligence and data analysis for mobile and web applications through MMP analytics integrations including Kochava, AppFlyer, Adjust, GA4, and Google Firebase. I design reporting data automation and interactive dashboards to analyze KPIs based on objectives, track performance, and enable data-driven decision-making using Excel, Power Query, Supermetrics, and Looker Studio.
             </p>
           </div>
-
           <div
             style={{
               borderRadius: 24,
@@ -316,7 +345,6 @@ export default function HomePage() {
               I build workflow automations using Marketo and Zapier, and apply RPA software including IBM RPA and Power Automate to improve efficiency. I manage API callbacks setups and tracker integrations across Google Tag Manager, Google Analytics 4, Meta Developer, WhatsApp Business Cloud Accounts (WABA), social pixels, search pixels, Conversion API, Events Manager, and Google App Scripts.
             </p>
           </div>
-
           <div
             style={{
               borderRadius: 24,
@@ -450,8 +478,14 @@ export default function HomePage() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
+        @media (min-width: 1025px) {
+          .hero-profile-mobile { display: none !important; }
+        }
         @media (max-width: 1024px) {
-          .hero-grid-inner { grid-template-columns: 1fr !important; padding: 48px 24px !important; }
+          .hero-grid-inner { grid-template-columns: 1fr !important; padding: 24px 24px 48px !important; }
+          .hero-grid-inner > div:first-child { padding-top: 8px; }
+          .hero-grid-inner > div:last-child { display: none !important; }
+          .hero-profile-mobile { display: flex !important; }
           .scorecards-grid-inner { grid-template-columns: repeat(2, 1fr) !important; }
           .brand-grid-inner { grid-template-columns: repeat(2, 1fr) !important; }
           .area-grid-inner { grid-template-columns: 1fr !important; }
@@ -462,12 +496,21 @@ export default function HomePage() {
           .cta-section-inner { padding: 0 24px 64px !important; }
         }
         @media (max-width: 640px) {
-          .scorecards-grid-inner { grid-template-columns: repeat(2, 1fr) !important; }
+          .hero-grid-inner h1 { font-size: 32px !important; }
+          .hero-description { font-size: 15px !important; }
+          .scorecards-grid-inner { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
           .brand-grid-inner { grid-template-columns: 1fr !important; }
           .services-grid-inner { grid-template-columns: 1fr !important; }
           .tools-grid-inner { grid-template-columns: 1fr !important; }
           .hero-buttons { flex-direction: column !important; }
           .hero-buttons a { width: 100% !important; text-align: center !important; }
+          .skills-cards > div { padding: 20px 16px !important; font-size: 14px !important; }
+        }
+        @media (max-width: 480px) {
+          .hero-profile-mobile > div { grid-template-columns: 1fr !important; }
+          .hero-grid-inner h1 { font-size: 28px !important; }
+          .hero-grid-inner { padding: 16px 16px 40px !important; }
+          .hero-profile-mobile { padding: 32px 16px 0 !important; }
         }
       ` }} />
     </>

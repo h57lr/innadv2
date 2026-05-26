@@ -135,4 +135,9 @@ a {
 @media (max-width: 640px) {
   .grid-2-col-sm { grid-template-columns: 1fr !important; }
   .grid-3-col-sm { grid-template-columns: 1fr !important; }
+  .section h2 { font-size: 30px !important; }
+  .section .section-inner > div:first-child > p { font-size: 14px !important; }
+}
+@media (max-width: 480px) {
+  .section h2 { font-size: 26px !important; }
 }
