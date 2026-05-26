@@ -76,9 +76,9 @@ export default function HomePage() {
     <>
       <section style={{ borderBottom: borderStyle }}>
         <div className="hero-profile-mobile" style={{ display: "none", maxWidth: 1280, margin: "0 auto", padding: "48px 24px 0", flexDirection: "column", gap: 16 }}>
-          <div style={{ borderRadius: 24, border: borderStyle, padding: 16, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, alignItems: "start" }}>
             <ProfileImage src="/assets/images/profile.jpg" alt="Enad Al-Shneikat" />
-            <div style={{ textAlign: "center" }}>
+            <div style={{ borderRadius: 24, border: borderStyle, padding: "16px", textAlign: "center", alignSelf: "stretch", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <p style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 16, color: "var(--ink-black)", margin: 0 }}>
                 Enad Al-Shneikat
               </p>
@@ -200,15 +200,15 @@ export default function HomePage() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: 16,
-              borderRadius: 24,
-              border: borderStyle,
-              padding: 20,
+              gap: 20,
             }}
           >
             <ProfileImage src="/assets/images/profile.jpg" alt="Enad Al-Shneikat" />
             <div
               style={{
+                borderRadius: 24,
+                border: borderStyle,
+                padding: "20px 20px 16px",
                 textAlign: "center",
               }}
             >

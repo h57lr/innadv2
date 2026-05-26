@@ -15,7 +15,8 @@ export function ProfileImage({ src, alt }: ProfileImageProps) {
   return (
     <div
       style={{
-        borderRadius: 16,
+        borderRadius: 24,
+        border: borderStyle,
         overflow: "hidden",
         background: "#e5e5e5",
         lineHeight: 0,
