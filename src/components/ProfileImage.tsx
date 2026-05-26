@@ -18,11 +18,8 @@ export function ProfileImage({ src, alt }: ProfileImageProps) {
         borderRadius: 24,
         border: borderStyle,
         overflow: "hidden",
-        maxHeight: 480,
         background: "#e5e5e5",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        lineHeight: 0,
       }}
     >
       {!error && (
