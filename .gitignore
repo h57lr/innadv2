@@ -1,8 +1,8 @@
 .next/
+.opencode/
 node_modules/
 out/
 coverage/
 dist/
 *.log
 next-env.d.ts
-
