@@ -18,14 +18,14 @@ const storyHighlights = [
 ];
 
 const brandExperience: BrandLogoItem[] = [
-  { name: "Western Union", logoSrc: "/assets/brands/western-union.png", tone: "western-union" },
+  { name: "Western Union", logoSrc: "/assets/brands/western-union.svg", tone: "western-union" },
   { name: "BMW Group", logoSrc: "/assets/brands/bmw.webp", tone: "bmw" },
   { name: "Beiersdorf NIVEA", logoSrc: "/assets/brands/nivea.svg", tone: "nivea" },
   { name: "Accor", logoSrc: "/assets/brands/accor.png", tone: "accor" },
-  { name: "Fairmont Luxury Hotels & Resorts", logoSrc: "/assets/brands/fairmont.jpg", tone: "fairmont" },
+  { name: "Fairmont Luxury Hotels & Resorts", logoSrc: "/assets/brands/fairmont.png", tone: "fairmont" },
   { name: "Rixos", logoSrc: "/assets/brands/rixos.png", tone: "rixos" },
   { name: "Nestle", logoSrc: "/assets/brands/nestle.jpg", tone: "nestle" },
-  { name: "MINI Cooper", logoSrc: "/assets/brands/mini.jpg", tone: "mini" },
+  { name: "MINI Cooper", logoSrc: "/assets/brands/mini.svg", tone: "mini" },
   { name: "Rolls-Royce Motor Cars", logoSrc: "/assets/brands/rolls-royce.jpg", tone: "rolls-royce" },
 ];
 
