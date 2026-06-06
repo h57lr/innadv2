@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { BrandLogoMarquee, type BrandLogoItem } from "@/components/BrandLogoMarquee";
 import { CTA } from "@/components/CTA";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { ProfileImage } from "@/components/ProfileImage";
@@ -109,8 +110,16 @@ const methodologySteps = [
   { title: "Optimize", description: "Use stronger signals and better operational visibility to improve decision quality, prioritization, and scaling discipline." },
 ];
 
-const brandExperience = [
-  "Western Union", "BMW Group", "Beiersdorf NIVEA", "Accor", "Fairmont Luxury Hotels & Resorts", "Nestle",
+const brandExperience: BrandLogoItem[] = [
+  { name: "Western Union", logoSrc: "/assets/brands/western-union.png", tone: "western-union" },
+  { name: "BMW Group", logoSrc: "/assets/brands/bmw.webp", tone: "bmw" },
+  { name: "Beiersdorf NIVEA", logoSrc: "/assets/brands/nivea.svg", tone: "nivea" },
+  { name: "Accor", logoSrc: "/assets/brands/accor.png", tone: "accor" },
+  { name: "Fairmont Luxury Hotels & Resorts", logoSrc: "/assets/brands/fairmont.jpg", tone: "fairmont" },
+  { name: "Rixos", logoSrc: "/assets/brands/rixos.png", tone: "rixos" },
+  { name: "Nestle", logoSrc: "/assets/brands/nestle.jpg", tone: "nestle" },
+  { name: "MINI Cooper", logoSrc: "/assets/brands/mini.jpg", tone: "mini" },
+  { name: "Rolls-Royce Motor Cars", logoSrc: "/assets/brands/rolls-royce.jpg", tone: "rolls-royce" },
 ];
 
 const featuredServiceSlugs = new Set([
@@ -420,25 +429,7 @@ export default function HomePage() {
         title="Experience across global and regional brand environments"
         description="Enad's background spans performance marketing, tracking, analytics, automation, and reporting work across established brand ecosystems."
       >
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}           className="brand-grid-inner">
-          {brandExperience.map((brand) => (
-            <div
-              key={brand}
-              style={{
-                borderRadius: 16,
-                border: borderStyle,
-                padding: "20px 24px",
-                textAlign: "center",
-                fontFamily: "var(--font-sans)",
-                fontSize: 14,
-                fontWeight: 500,
-                color: "var(--ink-black)",
-              }}
-            >
-              {brand}
-            </div>
-          ))}
-        </div>
+        <BrandLogoMarquee brands={brandExperience} />
       </SectionShell>
 
       <SectionShell

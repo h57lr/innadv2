@@ -1,4 +1,5 @@
 import { CTA } from "@/components/CTA";
+import { BrandLogoMarquee, type BrandLogoItem } from "@/components/BrandLogoMarquee";
 import { SectionShell } from "@/components/SectionShell";
 
 export const metadata = {
@@ -16,8 +17,16 @@ const storyHighlights = [
   "Automation and process improvement aimed at reducing manual friction and improving consistency.",
 ];
 
-const brandExperience = [
-  "Western Union", "BMW Group", "Beiersdorf NIVEA", "Accor", "Fairmont Luxury Hotels & Resorts", "Nestle",
+const brandExperience: BrandLogoItem[] = [
+  { name: "Western Union", logoSrc: "/assets/brands/western-union.png", tone: "western-union" },
+  { name: "BMW Group", logoSrc: "/assets/brands/bmw.webp", tone: "bmw" },
+  { name: "Beiersdorf NIVEA", logoSrc: "/assets/brands/nivea.svg", tone: "nivea" },
+  { name: "Accor", logoSrc: "/assets/brands/accor.png", tone: "accor" },
+  { name: "Fairmont Luxury Hotels & Resorts", logoSrc: "/assets/brands/fairmont.jpg", tone: "fairmont" },
+  { name: "Rixos", logoSrc: "/assets/brands/rixos.png", tone: "rixos" },
+  { name: "Nestle", logoSrc: "/assets/brands/nestle.jpg", tone: "nestle" },
+  { name: "MINI Cooper", logoSrc: "/assets/brands/mini.jpg", tone: "mini" },
+  { name: "Rolls-Royce Motor Cars", logoSrc: "/assets/brands/rolls-royce.jpg", tone: "rolls-royce" },
 ];
 
 const capabilityAreas = [
@@ -92,14 +101,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SectionShell eyebrow="Brand Experience" title="Experience across global and regional brand environments" description="My background includes work across teams and environments connected to brands such as Western Union, BMW Group, Beiersdorf NIVEA, Accor, Fairmont Luxury Hotels & Resorts, and Nestle.">
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }} className="brand-grid-inner">
-          {brandExperience.map((brand) => (
-            <div key={brand} style={{ borderRadius: 16, border: borderStyle, padding: "20px 24px", textAlign: "center", fontFamily: "var(--font-sans)", fontSize: 14, fontWeight: 500, color: "var(--ink-black)" }}>
-              {brand}
-            </div>
-          ))}
-        </div>
+      <SectionShell eyebrow="Brand Experience" title="Experience across global and regional brand environments" description="My background includes work across teams and environments connected to brands such as Western Union, BMW Group, Beiersdorf NIVEA, Accor, Fairmont, Rixos, Nestle, MINI Cooper, and Rolls-Royce Motor Cars.">
+        <BrandLogoMarquee brands={brandExperience} />
         <div style={{ marginTop: 16, borderRadius: 20, border: borderStyle, padding: 20, fontFamily: "var(--font-sans)", fontSize: 14, lineHeight: 1.6, color: "var(--ink-secondary)" }}>
           This portfolio keeps client details, internal systems, and performance data confidential. The emphasis here is on the kind of work I have supported: improving campaign execution, measurement confidence, reporting visibility, and operational reliability.
         </div>

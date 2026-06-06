@@ -201,12 +201,151 @@ a {
   opacity: 1;
 }
 
+.brand-marquee {
+  --brand-card-width: 246px;
+  --brand-gap: 14px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--grid-grey);
+  border-radius: 28px;
+  padding: 18px 0;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(230, 95, 46, 0.08), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(247, 247, 247, 0.72));
+}
+
+.brand-marquee::before,
+.brand-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  width: min(120px, 18vw);
+  pointer-events: none;
+}
+
+.brand-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--paper-white) 12%, rgba(250, 250, 250, 0));
+}
+
+.brand-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--paper-white) 12%, rgba(250, 250, 250, 0));
+}
+
+.brand-marquee__viewport {
+  overflow: hidden;
+}
+
+.brand-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: brand-marquee-slide 42s linear infinite;
+  will-change: transform;
+}
+
+.brand-marquee:hover .brand-marquee__track {
+  animation-play-state: paused;
+}
+
+.brand-marquee__group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--brand-gap);
+  padding-right: var(--brand-gap);
+}
+
+.brand-marquee__card {
+  position: relative;
+  width: var(--brand-card-width);
+  min-height: 118px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(229, 229, 229, 0.96);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 52px rgba(10, 10, 10, 0.045);
+  color: var(--ink-black);
+  isolation: isolate;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.brand-marquee__card::before {
+  content: "";
+  position: absolute;
+  inset: -60% auto auto -20%;
+  z-index: -1;
+  width: 150px;
+  height: 150px;
+  border-radius: 9999px;
+  background: var(--brand-accent, rgba(230, 95, 46, 0.12));
+  opacity: 0.9;
+  filter: blur(4px);
+}
+
+.brand-marquee__card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(230, 95, 46, 0.34);
+  box-shadow: 0 24px 66px rgba(10, 10, 10, 0.08);
+}
+
+.brand-marquee__logo {
+  width: auto;
+  max-width: var(--logo-max-width, 158px);
+  height: var(--logo-height, 56px);
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: grayscale(0.2) contrast(1.04);
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.brand-marquee__card:hover .brand-marquee__logo {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.05);
+}
+
+.brand-marquee__card--western-union { --brand-accent: rgba(255, 206, 0, 0.25); --brand-ink: #111111; }
+.brand-marquee__card--bmw { --brand-accent: rgba(0, 102, 177, 0.18); --brand-ink: #0f172a; }
+.brand-marquee__card--nivea { --brand-accent: rgba(0, 47, 108, 0.17); --brand-ink: #002f6c; }
+.brand-marquee__card--accor { --brand-accent: rgba(173, 133, 64, 0.18); --brand-ink: #1a1a1a; }
+.brand-marquee__card--fairmont { --brand-accent: rgba(15, 86, 75, 0.15); --brand-ink: #0f564b; }
+.brand-marquee__card--rixos { --brand-accent: rgba(154, 119, 54, 0.17); --brand-ink: #3f3428; }
+.brand-marquee__card--nestle { --brand-accent: rgba(101, 75, 56, 0.16); --brand-ink: #4e3829; }
+.brand-marquee__card--mini { --brand-accent: rgba(0, 0, 0, 0.1); --brand-ink: #050505; }
+.brand-marquee__card--rolls-royce { --brand-accent: rgba(78, 54, 118, 0.16); --brand-ink: #3d2868; }
+
+.brand-marquee__card--western-union .brand-marquee__logo { --logo-max-width: 154px; --logo-height: 54px; }
+.brand-marquee__card--bmw .brand-marquee__logo { --logo-max-width: 96px; --logo-height: 66px; }
+.brand-marquee__card--nivea .brand-marquee__logo { --logo-max-width: 112px; --logo-height: 62px; }
+.brand-marquee__card--accor .brand-marquee__logo { --logo-max-width: 156px; --logo-height: 58px; }
+.brand-marquee__card--fairmont .brand-marquee__logo { --logo-max-width: 172px; --logo-height: 62px; }
+.brand-marquee__card--rixos .brand-marquee__logo { --logo-max-width: 174px; --logo-height: 56px; }
+.brand-marquee__card--nestle .brand-marquee__logo { --logo-max-width: 128px; --logo-height: 66px; }
+.brand-marquee__card--mini .brand-marquee__logo { --logo-max-width: 126px; --logo-height: 66px; }
+.brand-marquee__card--rolls-royce .brand-marquee__logo { --logo-max-width: 122px; --logo-height: 68px; }
+
+@keyframes brand-marquee-slide {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scorecard,
   .scorecard::before,
   .scorecard__label,
   .scorecard__number,
-  .scorecard__description {
+  .scorecard__description,
+  .brand-marquee__track,
+  .brand-marquee__card,
+  .brand-marquee__logo {
+    animation: none !important;
     transition: none !important;
   }
 }
@@ -217,6 +356,23 @@ a {
     padding: 12px 24px;
     width: 100%;
     text-align: center;
+  }
+
+  .brand-marquee {
+    --brand-card-width: 196px;
+    --brand-gap: 10px;
+    border-radius: 22px;
+    padding: 12px 0;
+  }
+
+  .brand-marquee__card {
+    min-height: 96px;
+    border-radius: 18px;
+  }
+
+  .brand-marquee__logo {
+    max-width: calc(var(--logo-max-width, 132px) * 0.78);
+    height: calc(var(--logo-height, 44px) * 0.8);
   }
 }
 
