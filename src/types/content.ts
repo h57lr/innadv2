@@ -24,6 +24,7 @@ export type CaseStudy = {
   slug: string;
   title: string;
   category: string;
+  subCategories?: string[];
   clientLabel: string;
   summary: string;
   problem: string;

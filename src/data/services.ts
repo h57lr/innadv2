@@ -24,24 +24,27 @@ export const services: Service[] = [
       "Campaign structures that have become fragmented across platforms or markets.",
       "Budget decisions being made without a clear funnel model or channel role definition.",
       "Scaling issues caused by weak creative testing, unclear audience logic, or inconsistent optimization routines.",
+      "Healthcare and medical aesthetics campaigns that need compliant, consultation-led demand generation instead of discount-only lead volume.",
     ],
     capabilities: [
       "Multi-market campaign planning and account structure support",
       "Platform mix strategy across Meta, TikTok, Snapchat, Google, YouTube, and LinkedIn",
       "Audience, retargeting, budget allocation, and testing framework design",
       "Performance reviews focused on what needs to change operationally, not just what happened",
+      "Procedure-level growth planning for medical aesthetics, healthcare lead generation, WhatsApp funnels, and paid social acquisition",
     ],
     typicalProblems: [
       "Prospecting, retargeting, and creative testing are all blended together, making learning slower.",
       "Channels are being judged in isolation without enough visibility into their role in the wider funnel.",
       "Scaling decisions are happening before tracking, landing pages, or reporting are stable enough to support them.",
     ],
-    tools: ["Meta Ads", "TikTok Ads", "Snapchat Ads", "Google Ads", "LinkedIn Ads"],
+    tools: ["Meta Ads", "TikTok Ads", "Snapchat Ads", "Google Ads", "LinkedIn Ads", "WhatsApp"],
     deliverables: [
       "Channel strategy and prioritization recommendations",
       "Campaign structure blueprint or review summary",
       "Testing and optimization framework",
       "Decision notes on budget allocation, audience logic, and next-step priorities",
+      "Lead generation and WhatsApp funnel recommendations for consultation-led services",
     ],
     ctaDescription:
       "Useful when paid media needs a stronger operating model before the next growth push, platform expansion, or account restructure.",
@@ -243,12 +246,14 @@ export const services: Service[] = [
       "Stack decisions made without clear measurement logic.",
       "Platform integrations that create operational blind spots.",
       "Unclear governance around tracking, CRM, and attribution systems.",
+      "Lead generation systems where Meta Ads, WhatsApp conversations, qualification, and sales feedback are not connected clearly enough for scaling decisions.",
     ],
     capabilities: [
       "Stack planning support",
       "Platform integration reviews",
       "Lead flow and callback logic mapping",
       "Measurement governance recommendations",
+      "Growth system design for paid social, WhatsApp funnels, creative testing, lead quality feedback, and sales operations",
     ],
     typicalProblems: [
       "New tools are added without a clear role in the wider operating model.",
@@ -267,6 +272,7 @@ export const services: Service[] = [
       "Stack and operating model recommendation summary",
       "Measurement governance outline",
       "Implementation priorities across teams, tools, or vendors",
+      "Healthcare lead generation and growth-system recommendations where compliance, trust, and qualification matter",
     ],
     ctaDescription:
       "Useful when the challenge is broader than one channel and the real need is a clearer operating model for growth, data, and platform coordination.",
@@ -299,12 +305,14 @@ export const services: Service[] = [
       "Landing pages that are not aligned with campaign intent.",
       "Funnels with unclear drop-off points.",
       "E-commerce journeys lacking reliable event visibility.",
+      "WhatsApp inquiry journeys where users need clearer education, qualification, pricing context, and consultation next steps before revenue can be created.",
     ],
     capabilities: [
       "Landing page and funnel review",
       "CRO support and journey analysis",
       "E-commerce event tracking support",
       "Retargeting and conversion path alignment",
+      "WhatsApp funnel optimization for healthcare lead generation, consultation booking, and sales feedback loops",
     ],
     typicalProblems: [
       "The landing page experience does not continue the promise made in the ad or campaign.",
@@ -317,6 +325,7 @@ export const services: Service[] = [
       "Tracking observations",
       "CRO opportunity notes",
       "Funnel alignment recommendations",
+      "WhatsApp inquiry and consultation-flow optimization notes",
     ],
     ctaDescription:
       "Useful when acquisition, site experience, and measurement need to be looked at together instead of as separate problems.",

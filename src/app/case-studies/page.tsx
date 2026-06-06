@@ -1,12 +1,14 @@
 import { CTA } from "@/components/CTA";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { MedicalAestheticsCaseStudy } from "@/components/MedicalAestheticsCaseStudy";
 import { SectionShell } from "@/components/SectionShell";
 import { caseStudies } from "@/data/caseStudies";
+import { medicalAestheticsCaseStudy } from "@/data/medicalAestheticsCaseStudy";
 
 export const metadata = {
   title: "Case Studies | Enad Al-Shneikat",
   description:
-    "Redacted case-study structures covering tracking, attribution, BI, and performance diagnostics without unsupported metrics.",
+    "Case studies covering performance marketing, healthcare lead generation, tracking, attribution, BI, and growth systems with claim-safe proof structure.",
 };
 
 const borderStyle = "1px solid var(--grid-grey)";
@@ -22,8 +24,8 @@ export default function CaseStudiesPage() {
     <>
       <SectionShell
         eyebrow="Case Studies"
-        title="Redacted case studies built around credible proof structure"
-        description="These examples stay professional, claim-safe, and confidentiality-aware by showing the problem, role, approach, tools, and outcome type without inventing metrics or exposing client details."
+        title="Case studies built around credible proof structure"
+        description="These examples stay professional, claim-safe, and confidentiality-aware by separating reported results, data-ready placeholders, redacted details, and implementation approach."
       >
         <div style={{ display: "grid", gridTemplateColumns: "0.95fr 2.05fr", gap: 20 }} className="proof-grid-inner">
           <aside style={{ borderRadius: 20, border: `1px solid rgba(230,95,46,0.2)`, background: "rgba(230,95,46,0.04)", padding: 24 }}>
@@ -31,8 +33,8 @@ export default function CaseStudiesPage() {
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--signal-orange)", display: "inline-block" }} />
               Public Proof Standard
             </p>
-            <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 22, lineHeight: 1.1, letterSpacing: "-0.01em", color: "var(--ink-black)", margin: "12px 0 0" }}>
-              Case studies stay credible by separating verified work from private results.
+              <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: 22, lineHeight: 1.1, letterSpacing: "-0.01em", color: "var(--ink-black)", margin: "12px 0 0" }}>
+              Case studies stay credible by separating reported metrics from private or unconfirmed details.
             </h3>
             <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 16 }}>
               {proofStandards.map((s) => (
@@ -51,9 +53,13 @@ export default function CaseStudiesPage() {
           </div>
         </div>
 
+        <div style={{ marginTop: 48 }}>
+          <MedicalAestheticsCaseStudy />
+        </div>
+
         <div style={{ marginTop: 48, display: "flex", flexDirection: "column", gap: 32 }}>
           {caseStudies.map((caseStudy) => (
-            <article key={caseStudy.slug} id={caseStudy.slug} style={{ borderRadius: 24, border: borderStyle, padding: 32 }}>
+            caseStudy.slug === medicalAestheticsCaseStudy.slug ? null : <article key={caseStudy.slug} id={caseStudy.slug} style={{ borderRadius: 24, border: borderStyle, padding: 32 }}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 9.5, letterSpacing: "0.10em", textTransform: "uppercase", padding: "3px 8px", borderRadius: 9999, border: borderStyle, color: "var(--signal-orange)" }}>
                   {caseStudy.category}

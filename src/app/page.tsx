@@ -24,10 +24,63 @@ const expertiseBadges = [
 ];
 
 const scorecards = [
-  { value: "9+", label: "Years of Experience" },
-  { value: "Full Stack", label: "Digital Marketer" },
-  { value: "50+", label: "Tools & Platforms" },
-  { value: "Enterprise", label: "Global Brand Experience" },
+  {
+    label: "AD SPEND",
+    value: 10,
+    prefix: "$",
+    suffix: "M+",
+    finalDisplay: "$10M+",
+    description:
+      "Managed across Meta, Google, TikTok, Snapchat, LinkedIn, and programmatic campaigns for regional and global brands.",
+  },
+  {
+    label: "PERFORMANCE",
+    value: 83,
+    suffix: "%+",
+    finalDisplay: "83%+",
+    description:
+      "Reduction in cost per registration through full-funnel restructuring, audience testing, and platform optimization.",
+  },
+  {
+    label: "AUTOMATION",
+    value: 10,
+    suffix: "K+",
+    finalDisplay: "10K+",
+    description:
+      "Reporting rows, formulas, dashboards, and tracking workflows streamlined through marketing automation and analytics systems.",
+  },
+  {
+    label: "EXPERIENCE",
+    value: 9,
+    suffix: "+",
+    finalDisplay: "9+",
+    description:
+      "Years working across performance marketing, martech, tracking, analytics, automation, and BI execution.",
+  },
+  {
+    label: "PLATFORMS",
+    value: 50,
+    suffix: "+",
+    finalDisplay: "50+",
+    description:
+      "Hands-on operating range across acquisition platforms, analytics tools, MMPs, BI systems, automation tools, and ecommerce stacks.",
+  },
+  {
+    label: "BRANDS",
+    value: 10,
+    suffix: "+",
+    finalDisplay: "10+",
+    description:
+      "Experience across global and regional brand environments spanning financial services, automotive, hospitality, ecommerce, and healthcare.",
+  },
+  {
+    label: "MARKETS",
+    value: 6,
+    suffix: "+",
+    finalDisplay: "6+",
+    description:
+      "Campaigns and growth work managed across KSA, UAE, Kuwait, Qatar, Bahrain, Jordan, and adjacent regional markets.",
+  },
 ];
 
 const focusAreas = [
@@ -153,15 +206,14 @@ export default function HomePage() {
             </p>
             <div
               style={{
-                marginTop: 24,
+                marginTop: 34,
                 display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)",
-                gap: 10,
+                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
               }}
               className="scorecards-grid-inner"
             >
               {scorecards.map((sc) => (
-                <ScoreCard key={sc.label} value={sc.value} label={sc.label} />
+                <ScoreCard key={sc.label} {...sc} />
               ))}
             </div>
             <div className="hero-buttons" style={{ marginTop: 24, display: "flex", gap: 10, flexWrap: "wrap" }}>
@@ -444,8 +496,8 @@ export default function HomePage() {
 
       <SectionShell
         eyebrow="Case-Study Thinking"
-        title="Structured examples of how Enad approaches tracking, attribution, and reporting problems"
-        description="Case-study content stays redacted and claim-safe until validated outcomes are approved for publication."
+        title="Featured projects across performance, healthcare lead generation, tracking, and reporting"
+        description="Representative case studies show how Enad connects strategy, media execution, measurement, funnel logic, and reporting discipline without inventing unsupported numbers."
       >
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="case-grid-inner">
           {caseStudies.map((caseStudy) => (
@@ -498,7 +550,7 @@ export default function HomePage() {
         @media (max-width: 640px) {
           .hero-grid-inner h1 { font-size: 32px !important; }
           .hero-description { font-size: 15px !important; }
-          .scorecards-grid-inner { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+          .scorecards-grid-inner { grid-template-columns: 1fr !important; }
           .brand-grid-inner { grid-template-columns: 1fr !important; }
           .services-grid-inner { grid-template-columns: 1fr !important; }
           .tools-grid-inner { grid-template-columns: 1fr !important; }

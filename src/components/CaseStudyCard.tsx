@@ -49,6 +49,24 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         >
           {caseStudy.clientLabel}
         </span>
+        {caseStudy.subCategories?.slice(0, 2).map((category) => (
+          <span
+            key={category}
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 9.5,
+              letterSpacing: "0.10em",
+              textTransform: "uppercase",
+              padding: "3px 8px",
+              borderRadius: 9999,
+              border: borderStyle,
+              color: "#7a6a5f",
+              background: "rgba(0,0,0,0.015)",
+            }}
+          >
+            {category}
+          </span>
+        ))}
       </div>
       <h3
         style={{

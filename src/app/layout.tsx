@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Playfair_Display, IBM_Plex_Mono, DotGothic16 } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -25,6 +25,13 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const dotGothic = DotGothic16({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dot",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Enad Al-Shneikat | Performance Marketing, Martech & BI",
   description:
@@ -39,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} ${ibmPlexMono.variable}`}
+      className={`${inter.variable} ${playfair.variable} ${ibmPlexMono.variable} ${dotGothic.variable}`}
     >
       <body style={{ fontFamily: "var(--font-sans)" }}>
         <div className="relative flex min-h-screen flex-col">

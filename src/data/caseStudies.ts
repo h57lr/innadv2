@@ -1,6 +1,32 @@
 import type { CaseStudy } from "@/types/content";
+import { medicalAestheticsCaseStudy } from "@/data/medicalAestheticsCaseStudy";
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: medicalAestheticsCaseStudy.slug,
+    title: medicalAestheticsCaseStudy.title,
+    category: "Performance Marketing",
+    subCategories: medicalAestheticsCaseStudy.categories,
+    clientLabel: "Medical aesthetics center",
+    summary: medicalAestheticsCaseStudy.summary,
+    problem: medicalAestheticsCaseStudy.challenge,
+    role: medicalAestheticsCaseStudy.role,
+    approach: [
+      "Planned campaigns at procedure level so each service had its own audience logic, creative angle, messaging style, funnel objective, and conversion path.",
+      "Structured Meta Ads activity around WhatsApp inquiries, qualified lead quality, consultation intent, and sales feedback rather than cheap lead volume alone.",
+      "Built a creative system across tutorials, testimonials, UGC-style content, employee-generated content, educational videos, and trust-building medical content.",
+      "Used sales feedback, pricing objections, competitive context, and demand signals to recommend which procedures should be scaled.",
+    ],
+    tools: ["Meta Ads", "WhatsApp", "Arabic Ad Copy", "Creative Strategy", "Lead Quality Analysis"],
+    outcomeType: "$50K estimated media spend, $300K estimated revenue generated, 6x estimated ROAS, and $1.5 to $2.5 qualified interested lead cost.",
+    proofPoints: [
+      "Reported figures are shown as estimated or reported values only: $50K spend, $300K revenue, 6x ROAS, and $1.5 to $2.5 qualified interested lead cost.",
+      "Procedure-level leads, CPL, bookings, and revenue are intentionally data-ready fields and are not presented as confirmed facts.",
+      "The public version avoids exaggerated medical claims and keeps the tone educational, premium, and consultation-led.",
+    ],
+    confidentiality:
+      "Internal sales conversations, patient data, detailed campaign screenshots, and procedure-level commercial reporting remain excluded from the public version.",
+  },
   {
     slug: "tracking-audit-ecommerce",
     title: "Tracking Audit & Event Validation for E-commerce",
